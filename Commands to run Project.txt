@@ -1,0 +1,48 @@
+git status
+# Show which files are modified, staged, or untracked
+
+git diff
+# Show changes before staging
+
+git diff --staged
+# Show changes after staging
+
+git add .
+# Stage all changes (including index.html and renamed PDF)
+
+git commit -m "Encode resume URL with spaces"
+# Commit with a descriptive message
+
+git push origin main
+# Push to GitHub Pages (triggers site rebuild)
+
+git remote -v
+# Verify remote repository URL
+
+git log -1
+# View details of the latest commit
+
+git show <commit-sha>
+# Replace <commit-sha> with the hash from git log to see the exact diff
+
+# Additional useful commands
+
+git pull origin main
+# Pull latest changes from remote
+
+git checkout -b feature/your-feature
+# Create a new branch for a feature
+
+git merge feature/your-feature
+# Merge feature branch into current branch
+
+# If you later add a build step (e.g., using a framework)
+
+npm install
+# Install project dependencies
+
+npm run dev
+# Run a local development server
+
+npm run build
+# Build production assets
