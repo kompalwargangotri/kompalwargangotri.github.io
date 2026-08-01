@@ -573,6 +573,39 @@ h1 em {
   border-bottom: 1px solid
 }
 
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.project-actions a:not(.live-demo-btn) {
+  font-size: .82rem;
+  font-weight: 800;
+  border-bottom: 1px solid;
+}
+
+.live-demo-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border-bottom: none !important;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+  transition: all 0.2s ease;
+}
+
+.live-demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.35);
+}
+
+
 .experience-grid {
   display: grid;
   grid-template-columns: .75fr 1.25fr;
