@@ -403,40 +403,75 @@ h1 em {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px
 }
 
 .skill-card {
   background: #fff;
-  padding: 30px 25px;
+  padding: 30px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  min-height: 260px;
-  transition: .25s
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(15, 40, 70, 0.03)
 }
 
 .skill-card:hover {
-  transform: translateY(-6px);
-  border-color: #94b7dd;
-  box-shadow: 0 20px 40px rgba(19, 46, 77, .08)
+  transform: translateY(-5px);
+  border-color: #218c83;
+  box-shadow: 0 16px 36px rgba(33, 140, 131, 0.12)
 }
 
-.skill-number {
-  color: #218c83;
-  font-weight: 800;
-  font-size: .78rem
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line)
+}
+
+.skill-icon {
+  font-size: 1.6rem;
+  line-height: 1
 }
 
 .skill-card h3 {
-  font-size: 1.15rem;
-  margin: 58px 0 13px
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--navy);
+  font-weight: 700
 }
 
-.skill-card p {
-  color: var(--muted);
-  font-size: .88rem
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px
 }
+
+.skill-pills span {
+  background: #f1f5f9;
+  color: #0f2846;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease
+}
+
+.skill-pills span:hover {
+  background: #218c83;
+  color: #fff;
+  border-color: #218c83
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr
+  }
+}
+
 
 .project-heading {
   display: flex;
