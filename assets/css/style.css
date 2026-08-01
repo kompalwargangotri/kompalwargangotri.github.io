@@ -1011,3 +1011,40 @@ footer {
     }
 }
 /* End professional footer */
+
+/* Status Pulse Badge & Project Bullets */
+.status-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.project-bullets {
+  margin: 0.75rem 0 1rem 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.project-bullets li {
+  margin-bottom: 0.4rem;
+}
+
