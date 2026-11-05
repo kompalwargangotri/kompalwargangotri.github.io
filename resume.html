@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gangotri Kompalwar — AI/ML &amp; Generative AI Engineer Resume.">
+  <meta name="theme-color" content="#071426">
+  <title>Gangotri Kompalwar — Resume</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #071426;
+      --navy-dark: #050e1a;
+      --navy-card: #0d1f35;
+      --aqua: #43d9c7;
+      --blue: #4379ff;
+      --line: rgba(255, 255, 255, 0.1);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--navy-dark);
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+    }
+
+    /* Top Bar */
+    .viewer-header {
+      height: 64px;
+      background: rgba(7, 20, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      gap: 16px;
+      z-index: 10;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      color: #fff;
+      background: rgba(67, 217, 199, 0.12);
+      border-color: var(--aqua);
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--line);
+    }
+
+    /* Format Switcher on the left */
+    .format-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 3px;
+      gap: 4px;
+    }
+
+    .format-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .format-btn:hover {
+      color: #fff;
+    }
+
+    .format-btn.active {
+      background: var(--aqua);
+      color: var(--navy);
+      box-shadow: 0 2px 8px rgba(67, 217, 199, 0.3);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, var(--aqua), var(--blue));
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(67, 217, 199, 0.35);
+    }
+
+    .btn-raw {
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-raw:hover {
+      color: #fff;
+      border-color: var(--aqua);
+    }
+
+    /* Viewer Body */
+    .viewer-body {
+      width: 100%;
+      height: calc(100% - 64px);
+      position: relative;
+      background: #1e293b;
+    }
+
+    .viewer-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Mobile Fallback Overlay */
+    .mobile-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: var(--navy);
+      padding: 30px 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 16px;
+      z-index: 5;
+    }
+
+    .mobile-fallback-card {
+      background: var(--navy-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-fallback h2 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .mobile-fallback p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .mobile-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .viewer-header {
+        height: auto;
+        padding: 12px 14px;
+        flex-wrap: wrap;
+      }
+
+      .header-divider {
+        display: none;
+      }
+
+      .header-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .header-right {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .viewer-body {
+        height: calc(100% - 110px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="viewer-header">
+    <div class="header-left">
+      <a href="index.html" class="back-btn" title="Back to Portfolio">← Portfolio</a>
+      <div class="header-divider"></div>
+      <!-- Option for ATS resume placed directly on the left -->
+      <div class="format-switcher" role="tablist" aria-label="Resume Formats">
+        <button type="button" class="format-btn active" id="btn-pod" role="tab" aria-selected="true">
+          <span>📑 Resume</span>
+        </button>
+        <button type="button" class="format-btn" id="btn-ats" role="tab" aria-selected="false" title="Switch to ATS format">
+          <span>📄 ATS Format</span>
+        </button>
+      </div>
+    </div>
+    <div class="header-right">
+      <a id="btn-download" href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" download="Gangotri_Kompalwar_Resume.pdf" class="action-btn btn-download">
+        <span>⬇ Download PDF</span>
+      </a>
+      <a id="btn-raw" href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener" class="action-btn btn-raw">
+        <span>Open Raw ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="viewer-body">
+    <iframe id="pdf-frame" src="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf#toolbar=1&navpanes=0" title="Gangotri Kompalwar Resume"></iframe>
+  </main>
+
+  <script>
+    const btnPod = document.getElementById('btn-pod');
+    const btnAts = document.getElementById('btn-ats');
+    const pdfFrame = document.getElementById('pdf-frame');
+    const btnDownload = document.getElementById('btn-download');
+    const btnRaw = document.getElementById('btn-raw');
+
+    const podPath = 'assets/documents/Gangotri_Kompalwar_POD_Resume.pdf';
+    const atsPath = 'assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf';
+
+    function setFormat(format) {
+      if (format === 'ats') {
+        btnAts.classList.add('active');
+        btnAts.setAttribute('aria-selected', 'true');
+        btnPod.classList.remove('active');
+        btnPod.setAttribute('aria-selected', 'false');
+
+        pdfFrame.src = atsPath + '#toolbar=1&navpanes=0';
+        btnDownload.href = atsPath;
+        btnDownload.setAttribute('download', 'Gangotri_Kompalwar_ATS_Resume.pdf');
+        btnRaw.href = atsPath;
+        document.title = 'Gangotri Kompalwar — ATS Resume';
+      } else {
+        btnPod.classList.add('active');
+        btnPod.setAttribute('aria-selected', 'true');
+        btnAts.classList.remove('active');
+        btnAts.setAttribute('aria-selected', 'false');
+
+        pdfFrame.src = podPath + '#toolbar=1&navpanes=0';
+        btnDownload.href = podPath;
+        btnDownload.setAttribute('download', 'Gangotri_Kompalwar_Resume.pdf');
+        btnRaw.href = podPath;
+        document.title = 'Gangotri Kompalwar — Resume';
+      }
+    }
+
+    btnPod.addEventListener('click', () => setFormat('pod'));
+    btnAts.addEventListener('click', () => setFormat('ats'));
+
+    // Check URL parameters if someone lands directly with ?format=ats
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('format') === 'ats') {
+      setFormat('ats');
+    }
+  </script>
+</body>
+
+</html>

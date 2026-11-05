@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=7">
+  <link rel="stylesheet" href="assets/css/style.css?v=8">
   <script defer src="assets/js/script.js"></script>
 </head>
 
@@ -39,28 +39,7 @@
       <div class="nav-links">
         <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a
           href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
-        <div class="resume-dropdown-group nav-resume-group">
-          <button class="nav-cta resume-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true"
-            id="nav-resume-btn">Resume <span class="dropdown-arrow">▾</span></button>
-          <div class="resume-dropdown-menu" id="resume-dropdown" aria-label="Resume options">
-            <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener">
-              <span class="resume-badge">ATS</span>
-              <div class="resume-menu-info">
-                <strong>ATS Resume</strong>
-                <small>Scanner-friendly</small>
-              </div>
-              <span class="resume-ext">↗</span>
-            </a>
-            <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener">
-              <span class="resume-badge">POD</span>
-              <div class="resume-menu-info">
-                <strong>POD Resume</strong>
-                <small>Print-on-demand</small>
-              </div>
-              <span class="resume-ext">↗</span>
-            </a>
-          </div>
-        </div>
+        <a class="nav-cta" href="resume.html" target="_blank" rel="noopener" id="nav-resume-btn">Resume ↗</a>
       </div>
     </nav>
   </header>
@@ -77,29 +56,7 @@
           <p class="hero-summary">Final-year B.Tech student specialising in <strong>AI/ML &amp; Generative AI</strong> — I architect and deploy end-to-end intelligent systems, from <strong>Agentic AI workflows (LangGraph/LangChain)</strong> and <strong>production RAG pipelines</strong> to <strong>real-time Computer Vision (YOLOv8)</strong> and <strong>Voice AI</strong>.</p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">Explore my work <span>↗</span></a>
-            <div class="resume-dropdown-group">
-              <button class="button secondary resume-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-                Resume <span class="dropdown-arrow">▾</span>
-              </button>
-              <div class="resume-dropdown-menu" aria-label="Resume options">
-                <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener">
-                  <span class="resume-badge">ATS</span>
-                  <div class="resume-menu-info">
-                    <strong>ATS Resume</strong>
-                    <small>Scanner-friendly format</small>
-                  </div>
-                  <span class="resume-ext">↗</span>
-                </a>
-                <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener">
-                  <span class="resume-badge">POD</span>
-                  <div class="resume-menu-info">
-                    <strong>POD Resume</strong>
-                    <small>Print-on-demand format</small>
-                  </div>
-                  <span class="resume-ext">↗</span>
-                </a>
-              </div>
-            </div>
+            <a class="button secondary" href="resume.html" target="_blank" rel="noopener">View Resume ↗</a>
           </div>
           <div class="social-row">
             <a href="https://github.com/kompalwargangotri" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -541,29 +498,7 @@
               <a class="button primary" href="mailto:kompalwargangotri@gmail.com">Send me an email ✉️</a>
               <a class="button secondary" href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359"
                 target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
-              <div class="resume-dropdown-group">
-                <button class="button secondary resume-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-                  Resume <span class="dropdown-arrow">▾</span>
-                </button>
-                <div class="resume-dropdown-menu" aria-label="Resume options">
-                  <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener">
-                    <span class="resume-badge">ATS</span>
-                    <div class="resume-menu-info">
-                      <strong>ATS Resume</strong>
-                      <small>Scanner-friendly</small>
-                    </div>
-                    <span class="resume-ext">↗</span>
-                  </a>
-                  <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener">
-                    <span class="resume-badge">POD</span>
-                    <div class="resume-menu-info">
-                      <strong>POD Resume</strong>
-                      <small>Print-on-demand</small>
-                    </div>
-                    <span class="resume-ext">↗</span>
-                  </a>
-                </div>
-              </div>
+              <a class="button secondary" href="resume.html" target="_blank" rel="noopener">View Resume ↗</a>
             </div>
           </div>
         </div>
@@ -579,42 +514,11 @@
         <a href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359" target="_blank"
           rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:kompalwargangotri@gmail.com">Email</a>
-        <a href="#resume-modal" class="resume-modal-trigger">Resume ↗</a>
+        <a href="resume.html" target="_blank" rel="noopener">Resume ↗</a>
         <a href="#home">Back to top ↑</a>
       </nav>
     </div>
   </footer>
-
-  <!-- Universal Resume Modal -->
-  <div id="resume-modal" class="resume-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
-    <div class="resume-modal-backdrop"></div>
-    <div class="resume-modal-card">
-      <button class="resume-modal-close" type="button" aria-label="Close modal">&times;</button>
-      <div class="resume-modal-header">
-        <span class="resume-modal-icon">📄</span>
-        <h3 id="resume-modal-title">Select Resume Format</h3>
-        <p>Choose the format that best fits your review process:</p>
-      </div>
-      <div class="resume-modal-options">
-        <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener" class="resume-modal-option">
-          <div class="option-badge">ATS</div>
-          <div class="option-info">
-            <strong>ATS-Friendly Resume</strong>
-            <small>Optimized for Applicant Tracking Systems &amp; fast screening</small>
-          </div>
-          <span class="option-arrow">↗</span>
-        </a>
-        <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener" class="resume-modal-option">
-          <div class="option-badge">POD</div>
-          <div class="option-info">
-            <strong>POD Designed Resume</strong>
-            <small>Print-on-demand styled format with comprehensive presentation</small>
-          </div>
-          <span class="option-arrow">↗</span>
-        </a>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
