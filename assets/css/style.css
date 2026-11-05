@@ -811,63 +811,6 @@ h1 em {
   text-align: right
 }
 
-.contact {
-  background: linear-gradient(135deg, #123b62, #086a69);
-  color: #fff
-}
-
-.contact-inner {
-  max-width: 850px;
-  margin: auto;
-  text-align: center
-}
-
-.contact .section-kicker {
-  color: var(--aqua)
-}
-
-.contact h2 {
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
-  line-height: 1.08;
-  letter-spacing: -.055em;
-  margin: 10px 0
-}
-
-.contact p:not(.section-kicker) {
-  color: #c6d8e4
-}
-
-.contact .hero-actions {
-  justify-content: center
-}
-
-.light {
-  background: #fff;
-  color: var(--navy)
-}
-
-.outline-light {
-  border: 1px solid rgba(255, 255, 255, .55)
-}
-
-footer {
-  background: var(--navy);
-  color: #8499ad;
-  padding: 25px 0;
-  font-size: .78rem
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px
-}
-
-.footer-inner a {
-  color: #fff
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(25px);
@@ -1026,11 +969,6 @@ footer {
     text-align: left
   }
 
-  .footer-inner {
-    flex-direction: column;
-    text-align: center
-  }
-
   .section {
     padding: 68px 0
   }
@@ -1039,21 +977,6 @@ footer {
     font-size: 1.15rem
   }
 }
-
-/* IETE Achievement badge */
-.badge-iete {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #3dd6c6, #3678f6);
-  color: #fff;
-  vertical-align: middle;
-  margin-left: 8px;
-  letter-spacing: 0.03em;
-}
-
 
 .education-score {
   display: inline-block;
