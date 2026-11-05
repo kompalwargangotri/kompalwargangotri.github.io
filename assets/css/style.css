@@ -1310,10 +1310,15 @@ footer {
   }
 }
 
-/* Navigation Resume Dropdown & Action Links */
-.nav-resume-group {
+/* Universal Resume Dropdown & Modal System */
+.resume-dropdown-group {
   position: relative;
   display: inline-flex;
+}
+
+.resume-dropdown-group .button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .resume-dropdown-trigger {
@@ -1334,7 +1339,7 @@ footer {
 }
 
 .resume-dropdown-trigger:hover,
-.nav-resume-group:hover .resume-dropdown-trigger,
+.resume-dropdown-group:hover .resume-dropdown-trigger,
 .resume-dropdown-trigger[aria-expanded="true"] {
   color: #fff;
   border-color: var(--aqua);
@@ -1347,7 +1352,7 @@ footer {
   display: inline-block;
 }
 
-.nav-resume-group:hover .dropdown-arrow,
+.resume-dropdown-group:hover .dropdown-arrow,
 .resume-dropdown-trigger[aria-expanded="true"] .dropdown-arrow {
   transform: rotate(180deg);
 }
@@ -1355,21 +1360,27 @@ footer {
 .resume-dropdown-menu {
   position: absolute;
   top: calc(100% + 10px);
-  right: 0;
-  min-width: 200px;
+  left: 0;
+  min-width: 230px;
   background: #0d1f35;
   border: 1px solid rgba(67, 217, 199, 0.3);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 8px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   z-index: 100;
+  text-align: left;
 }
 
-.nav-resume-group:hover .resume-dropdown-menu,
-.nav-resume-group:focus-within .resume-dropdown-menu,
+.nav-resume-group .resume-dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.resume-dropdown-group:hover .resume-dropdown-menu,
+.resume-dropdown-group:focus-within .resume-dropdown-menu,
 .resume-dropdown-menu.open {
   display: flex;
 }
@@ -1377,19 +1388,37 @@ footer {
 .resume-dropdown-menu a {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
-  border-radius: 8px;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
   color: #dbe4ef;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .resume-dropdown-menu a:hover {
-  background: rgba(67, 217, 199, 0.12);
+  background: rgba(67, 217, 199, 0.14);
   color: var(--aqua);
-  padding-left: 14px;
+  padding-left: 15px;
+}
+
+.resume-dropdown-menu a .resume-menu-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.resume-dropdown-menu a .resume-menu-info strong {
+  font-size: 0.86rem;
+  color: #fff;
+}
+
+.resume-dropdown-menu a .resume-menu-info small {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
 }
 
 .resume-badge {
@@ -1397,15 +1426,17 @@ footer {
   font-weight: 800;
   background: rgba(67, 217, 199, 0.18);
   color: var(--aqua);
-  padding: 2px 6px;
+  padding: 3px 6px;
   border-radius: 5px;
   letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 
 .resume-ext {
   margin-left: auto;
   font-size: 0.8rem;
   opacity: 0.7;
+  flex-shrink: 0;
 }
 
 .secondary:hover {
@@ -1414,18 +1445,164 @@ footer {
   background: rgba(67, 217, 199, 0.06);
 }
 
+/* Universal Resume Modal */
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.resume-modal.active {
+  display: flex;
+}
+
+.resume-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 20, 38, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.resume-modal-card {
+  position: relative;
+  background: #0d1f35;
+  border: 1px solid rgba(67, 217, 199, 0.35);
+  border-radius: 20px;
+  padding: 32px 28px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  animation: modalScaleIn 0.22s ease-out;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resume-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  color: #94a3b8;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.resume-modal-close:hover {
+  color: #fff;
+}
+
+.resume-modal-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.resume-modal-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.resume-modal-header h3 {
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.resume-modal-header p {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.resume-modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume-modal-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: #fff;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.resume-modal-option:hover {
+  background: rgba(67, 217, 199, 0.12);
+  border-color: var(--aqua);
+  transform: translateY(-2px);
+}
+
+.resume-modal-option .option-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(67, 217, 199, 0.2);
+  color: var(--aqua);
+  padding: 6px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.resume-modal-option .option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resume-modal-option .option-info strong {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.resume-modal-option .option-info small {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.resume-modal-option .option-arrow {
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: var(--aqua);
+  flex-shrink: 0;
+}
+
 @media(max-width:900px) {
   .nav-resume-group {
     width: 100%;
     flex-direction: column;
   }
 
-  .resume-dropdown-trigger {
+  .nav-resume-group .resume-dropdown-trigger {
     width: 100%;
     justify-content: space-between;
   }
 
-  .resume-dropdown-menu {
+  .nav-resume-group .resume-dropdown-menu {
     position: static;
     min-width: 100%;
     margin-top: 6px;
