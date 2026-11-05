@@ -713,6 +713,24 @@ h1 em {
   max-width: 620px
 }
 
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 14px
+}
+
+.timeline-skills span {
+  display: inline-block;
+  background: #eef2f7;
+  color: #35495e;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 20px;
+  letter-spacing: .02em
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1283,6 +1301,132 @@ footer {
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Navigation Resume Dropdown & Action Links */
+.nav-resume-group {
+  position: relative;
+  display: inline-flex;
+}
+
+.resume-dropdown-trigger {
+  background: transparent;
+  color: #c8d3e2;
+  font-family: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #53657a;
+  border-radius: 10px;
+  padding: 9px 15px;
+  transition: all .2s ease;
+  line-height: normal;
+}
+
+.resume-dropdown-trigger:hover,
+.nav-resume-group:hover .resume-dropdown-trigger,
+.resume-dropdown-trigger[aria-expanded="true"] {
+  color: #fff;
+  border-color: var(--aqua);
+  background: rgba(67, 217, 199, 0.08);
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.nav-resume-group:hover .dropdown-arrow,
+.resume-dropdown-trigger[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.resume-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 200px;
+  background: #0d1f35;
+  border: 1px solid rgba(67, 217, 199, 0.3);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 100;
+}
+
+.nav-resume-group:hover .resume-dropdown-menu,
+.nav-resume-group:focus-within .resume-dropdown-menu,
+.resume-dropdown-menu.open {
+  display: flex;
+}
+
+.resume-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #dbe4ef;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.resume-dropdown-menu a:hover {
+  background: rgba(67, 217, 199, 0.12);
+  color: var(--aqua);
+  padding-left: 14px;
+}
+
+.resume-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: rgba(67, 217, 199, 0.18);
+  color: var(--aqua);
+  padding: 2px 6px;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+}
+
+.resume-ext {
+  margin-left: auto;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.secondary:hover {
+  border-color: var(--aqua);
+  color: var(--aqua);
+  background: rgba(67, 217, 199, 0.06);
+}
+
+@media(max-width:900px) {
+  .nav-resume-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .resume-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .resume-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 6px;
+    box-shadow: none;
+    background: rgba(7, 20, 38, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+    display: flex;
   }
 }
 

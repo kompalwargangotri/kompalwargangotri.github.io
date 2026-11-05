@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
   <script defer src="assets/js/script.js"></script>
 </head>
 
@@ -37,8 +37,22 @@
       <div class="nav-links">
         <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a
           href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
-        <a class="nav-cta" href="assets/documents/Gangotri%20Resume.pdf" target="_blank" rel="noopener"
-          id="nav-resume-btn">Resume ↗</a>
+        <div class="nav-resume-group">
+          <button class="nav-cta resume-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true"
+            id="nav-resume-btn">Resume <span class="dropdown-arrow">▾</span></button>
+          <div class="resume-dropdown-menu" id="resume-dropdown" aria-label="Resume options">
+            <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener">
+              <span class="resume-badge">ATS</span>
+              <span>ATS Resume</span>
+              <span class="resume-ext">↗</span>
+            </a>
+            <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener">
+              <span class="resume-badge">POD</span>
+              <span>POD Resume</span>
+              <span class="resume-ext">↗</span>
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -57,8 +71,10 @@
             real problems.</p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">Explore my work <span>↗</span></a>
-            <a class="button secondary" href="assets/documents/Gangotri%20Resume.pdf" target="_blank"
-              rel="noopener">View resume</a>
+            <a class="button secondary" href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank"
+              rel="noopener">📄 ATS Resume ↗</a>
+            <a class="button secondary" href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank"
+              rel="noopener">📑 POD Resume ↗</a>
           </div>
           <div class="social-row">
             <a href="https://github.com/kompalwargangotri" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -88,7 +104,7 @@
         </div>
         <div class="about-copy reveal">
           <p>I'm a final-year B.Tech student in Electronics &amp; Telecommunication Engineering at MIT Academy of
-            Engineering, Pune. With a background in Computer Engineering and hands-on experience across three
+            Engineering, Pune. With a background in Computer Engineering and hands-on experience across four
             internships, I build AI systems that go beyond notebooks — complete with APIs, interfaces, and
             reproducible results.</p>
           <p>My focus is on <strong>Generative AI, RAG pipelines, computer vision, and applied ML</strong> for
@@ -102,8 +118,8 @@
           </div>
           <div class="quick-facts">
             <div><strong>7.90</strong><span>CGPA (B.Tech)</span></div>
-            <div><strong>5</strong><span>AI/ML projects</span></div>
-            <div><strong>3</strong><span>Internships</span></div>
+            <div><strong>6</strong><span>AI/ML projects</span></div>
+            <div><strong>4</strong><span>Internships</span></div>
           </div>
         </div>
       </div>
@@ -199,30 +215,47 @@
             <div class="project-content">
               <p class="project-type">Generative AI · RAG · Education</p>
               <h3>GramNet AI: Offline Multilingual RAG-based AI Tutor</h3>
-              <p>Designed and developed an offline multilingual AI tutoring system using Retrieval-Augmented Generation (RAG), TinyLlama, and FastAPI for low-connectivity environments.</p>
+              <p>Developed an AI-powered multilingual tutoring system using Retrieval-Augmented Generation (RAG) and
+                TinyLLaMA to deliver context-aware educational responses grounded in retrieved knowledge.</p>
               <ul class="project-bullets">
-                <li>Built a semantic retrieval pipeline using SentenceTransformers, text chunking, and FAISS to enable context-aware responses through LLM-based knowledge retrieval.</li>
-                <li>Integrated speech-to-text, text-to-speech, and multilingual support (English, Hindi, and Marathi) with adaptive quizzes and voice interaction for an interactive learning experience.</li>
-                <li>Presented at the National Level Project Competition (NLPC-26).</li>
+                <li>Implemented a semantic retrieval pipeline using text chunking, SentenceTransformers embeddings, and
+                  FAISS for efficient knowledge retrieval and context selection.</li>
+                <li>Integrated a locally hosted TinyLLaMA model through llama.cpp for response generation grounded in
+                  retrieved knowledge.</li>
+                <li>Enabled multilingual voice interaction in English, Hindi, and Marathi via STT/TTS integration with
+                  adaptive quizzes optimized for offline-first usage in low-connectivity environments.</li>
               </ul>
               <div class="tags">
-                <span>Python</span><span>RAG</span><span>TinyLlama</span><span>LangChain</span><span>FAISS</span><span>FastAPI</span>
-              </div><a href="https://github.com/kompalwargangotri/gramnet-ai-offline-multilingual-rag-tutor" target="_blank" rel="noopener">View project ↗</a>
+                <span>RAG</span><span>LLMs</span><span>TinyLLaMA</span><span>Semantic
+                  Search</span><span>FAISS</span><span>SentenceTransformers</span><span>Python</span><span>SpeechRecognition
+                  / STT</span><span>Edge TTS</span><span>pyttsx3</span><span>LangChain</span>
+              </div><a href="https://github.com/kompalwargangotri/gramnet-ai-offline-multilingual-rag-tutor"
+                target="_blank" rel="noopener">View project ↗</a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-index">02</div>
             <div class="project-content">
-              <p class="project-type">Computer Vision · Fintech · Security</p>
-              <h3>SecureFin: Video KYC and AML Fraud Detection</h3>
-              <p>Developed an end-to-end AI-powered Video KYC and AML compliance system using FastAPI, integrating OCR, computer vision, facial verification, and anomaly detection into a unified verification pipeline.</p>
+              <p class="project-type">Computer Vision · Object Detection · Fintech &amp; Security</p>
+              <h3>SecureFin: YOLO-Based Automated Video KYC and AML Fraud Detection System</h3>
+              <p>Developed an AI-powered Video KYC and Anti-Money Laundering (AML) fraud detection system for automated
+                identity verification and suspicious activity detection.</p>
               <ul class="project-bullets">
-                <li>Implemented Tesseract OCR for Aadhaar/PAN data extraction, YOLOv8 for real-time person detection, and DeepFace with liveness verification for secure identity authentication.</li>
-                <li>Built an Isolation Forest-based AML module to detect suspicious financial activities and managed structured KYC workflows using SQLite.</li>
+                <li>Integrated Tesseract OCR to extract and validate Aadhaar/PAN details, YOLOv8 for person detection
+                  and single-person verification, and DeepFace for facial recognition and biometric identity
+                  verification.</li>
+                <li>Implemented liveness detection to strengthen video-based identity checks and Isolation Forest for
+                  identifying potentially suspicious AML activity.</li>
+                <li>Built a FastAPI backend to connect these components into a multi-stage verification pipeline, with
+                  SQLite for structured data management and storage.</li>
               </ul>
-              <div class="tags"><span>YOLOv8</span><span>FastAPI</span><span>Tesseract OCR</span><span>DeepFace</span><span>SQLite</span></div><a
-                href="https://github.com/kompalwargangotri/securefin-video-kyc-aml" target="_blank" rel="noopener">View project ↗</a>
+              <div class="tags"><span>YOLOv8</span><span>Tesseract
+                  OCR</span><span>DeepFace</span><span>TensorFlow</span><span>Computer Vision</span><span>Object
+                  Detection</span><span>Image Processing</span><span>Isolation
+                  Forest</span><span>FastAPI</span><span>SQLite</span></div><a
+                href="https://github.com/kompalwargangotri/securefin-video-kyc-aml" target="_blank" rel="noopener">View
+                project ↗</a>
             </div>
           </article>
 
@@ -230,14 +263,20 @@
             <div class="project-index">03</div>
             <div class="project-content">
               <p class="project-type">Machine Learning · Healthcare</p>
-              <h3>NephroPredict: AI-Based Early Chronic Kidney Disease Detection</h3>
-              <p>Developed a Random Forest-based machine learning model for early Chronic Kidney Disease (CKD) detection, achieving 90.96% prediction accuracy using patient clinical data.</p>
+              <h3>NephroPredict: AI-Based Early Detection of Chronic Kidney Disease (CKD)</h3>
+              <p>Developed a machine learning-based system for early prediction of Chronic Kidney Disease (CKD) using
+                clinical patient healthcare data.</p>
               <ul class="project-bullets">
-                <li>Performed data preprocessing, feature engineering, model training, and evaluation using classification metrics including Accuracy and F1-score to improve diagnostic reliability.</li>
-                <li>Deployed the trained model as a Flutter-based application to provide real-time CKD risk prediction and support early healthcare intervention.</li>
+                <li>Performed data preprocessing and feature engineering using Pandas and NumPy, and trained a Random
+                  Forest classifier using Scikit-learn to identify potential CKD risk.</li>
+                <li>Evaluated model performance using classification metrics including accuracy and F1-score, achieving
+                  90.96% accuracy, and implemented the trained model for real-time risk prediction.</li>
               </ul>
               <div class="tags">
-                <span>Python</span><span>Scikit-learn</span><span>SMOTE</span><span>Flask</span><span>Flutter</span>
+                <span>Python</span><span>Machine
+                  Learning</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Data
+                  Preprocessing</span><span>Feature Engineering</span><span>Model Evaluation</span><span>Data
+                  Visualization</span>
               </div><a href="https://github.com/kompalwargangotri/nephropredict-ai-ckd-detection" target="_blank"
                 rel="noopener">View project ↗</a>
             </div>
@@ -246,15 +285,17 @@
           <article class="project-card reveal">
             <div class="project-index">04</div>
             <div class="project-content">
-              <p class="project-type">Machine Learning · Sustainability</p>
+              <p class="project-type">Machine Learning · Deep Learning · Time Series</p>
               <h3>AI-Based Energy Consumption Prediction and Optimization</h3>
-              <p>Designed and developed an intelligent energy consumption prediction system using historical time-series, weather, and building data with multiple Machine Learning and Deep Learning models.</p>
-              <ul class="project-bullets">
-                <li>Trained and evaluated Support Vector Regression (SVR), Random Forest, Decision Tree, and LSTM models, with SVR achieving the highest prediction accuracy of 83.7%.</li>
-                <li>Deployed the best-performing model using Streamlit, enabling real-time energy consumption prediction, visualization, and optimized energy management.</li>
-              </ul>
+              <p>Developed an intelligent energy consumption prediction system using Machine Learning and Deep Learning
+                techniques to analyze historical energy data and forecast future consumption patterns. Implemented and
+                evaluated multiple models, including Random Forest, Support Vector Machine (SVM), Decision Tree, and
+                Long Short-Term Memory (LSTM), with SVM achieving the highest prediction accuracy of 83.7%. Built a
+                Streamlit-based web application for real-time energy consumption prediction and data visualization,
+                supporting efficient energy monitoring and informed energy management.</p>
               <div class="tags">
-                <span>Python</span><span>SVR</span><span>TensorFlow</span><span>Streamlit</span><span>Time-Series</span>
+                <span>Python Programming</span><span>Machine Learning</span><span>Deep Learning</span><span>Time Series
+                  Analysis</span><span>Data Preprocessing</span><span>Data Visualization</span><span>Streamlit</span>
               </div><a href="https://github.com/kompalwargangotri/ai-energy-consumption-prediction" target="_blank"
                 rel="noopener">View project ↗</a>
             </div>
@@ -263,17 +304,49 @@
           <article class="project-card reveal">
             <div class="project-index">05</div>
             <div class="project-content">
-              <p class="project-type">Machine Learning · Recommendation · Tourism</p>
+              <p class="project-type">Machine Learning · Full-Stack · Recommendation Systems</p>
               <h3>GreenHaven AI Eco-Retreat: AI-Integrated Full-Stack Booking Platform</h3>
-              <p>Developed an AI-powered full-stack eco-retreat booking platform featuring intelligent package recommendations, dynamic pricing, booking management, and sentiment analysis.</p>
-              <ul class="project-bullets">
-                <li>Implemented a Naive Bayes-based recommendation engine to provide personalized travel package suggestions and evaluated model performance using standard classification metrics.</li>
-                <li>Built a responsive web application with SQLite for data persistence, automated unit testing, and an intuitive interface for seamless booking and user interaction.</li>
-              </ul>
-              <div class="tags"><span>Python</span><span>Naive Bayes</span><span>SQLite</span><span>HTML/CSS/JS</span></div>
+              <p>Developed an AI-powered full-stack booking platform featuring intelligent package recommendations,
+                dynamic pricing, and seamless booking management. Implemented a Naïve Bayes-based recommendation engine
+                to suggest suitable packages based on user preferences and integrated SQLite for data storage and
+                management. Designed and developed a responsive web interface to provide an interactive user experience
+                and streamline the booking process.</p>
+              <div class="tags"><span>Python</span><span>Machine Learning</span><span>Naïve
+                  Bayes</span><span>Recommendation Systems</span><span>Full-Stack
+                  Development</span><span>SQLite</span><span>Database Management</span><span>Dynamic
+                  Pricing</span><span>Web Development</span><span>Responsive UI Design</span></div>
               <div class="project-actions">
-                <a href="https://github.com/kompalwargangotri/greenhaven-ai-eco-retreat" target="_blank" rel="noopener">View project ↗</a>
-                <a href="https://greenhaven-ai-eco-retreat.onrender.com/" target="_blank" rel="noopener" class="live-demo-btn">Live Demo 🚀</a>
+                <a href="https://github.com/kompalwargangotri/greenhaven-ai-eco-retreat" target="_blank"
+                  rel="noopener">View project ↗</a>
+                <a href="https://greenhaven-ai-eco-retreat.onrender.com/" target="_blank" rel="noopener"
+                  class="live-demo-btn">Live Demo 🚀</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">06</div>
+            <div class="project-content">
+              <p class="project-type">Machine Learning · Generative AI · Explainable AI</p>
+              <h3>Breast Cancer Prediction System using Tuned 10-Feature SVM, SHAP Explainability, and Generative AI
+              </h3>
+              <p>Developed an AI-powered breast cancer prediction system using a tuned Support Vector Machine (SVM)
+                classifier to distinguish between benign and malignant cases using the Breast Cancer Wisconsin dataset.
+                Evaluated multiple classification algorithms and optimized the SVM using hyperparameter tuning and
+                cross-validation, achieving 98.25% test accuracy. Integrated SHAP for model explainability and Google
+                Gemini for generating natural-language explanations of predictions. Built an interactive Streamlit
+                application with prediction probabilities and feature-level insights to make model outputs more
+                interpretable.</p>
+              <div class="tags">
+                <span>Python</span><span>Machine
+                  Learning</span><span>SVM</span><span>Scikit-learn</span><span>SHAP</span><span>Generative
+                  AI</span><span>Google Gemini</span><span>Streamlit</span><span>Pandas</span><span>NumPy</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/kompalwargangotri/breast-cancer-prediction-ai" target="_blank"
+                  rel="noopener">View project ↗</a>
+                <a href="https://breast-cancer-frontend-bo98.onrender.com/" target="_blank" rel="noopener"
+                  class="live-demo-btn">Live Demo 🚀</a>
               </div>
             </div>
           </article>
@@ -286,9 +359,19 @@
         <div class="section-heading reveal">
           <p class="section-kicker">Experience</p>
           <h2>Learning by doing</h2>
-          <p>Three internships spanning AI/ML engineering, Python development, and full-stack web development.</p>
+          <p>Four internships spanning Generative AI, AI/ML engineering, Python development, and full-stack web development.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <p class="timeline-date">13 Aug – 13 Sep, 2026</p>
+            <h3>Artificial Intelligence and Generative AI Intern</h3>
+            <h4>YBI Foundation · Remote · IT / Computers – Software</h4>
+            <div class="timeline-skills">
+              <span>Prompt Engineering</span><span>Artificial Intelligence</span><span>Natural Language Processing (NLP)</span><span>Python</span><span>Machine Learning</span><span>Generative AI</span><span>Large Language Models (LLMs)</span><span>AI Application Development</span>
+            </div>
+            <p>Completed a one-month Artificial Intelligence and Generative AI internship at Ybi Foundation, gaining exposure to AI/ML concepts, Generative AI technologies, and practical AI application development. Engaged in learning activities and project-based tasks, strengthening technical knowledge, problem-solving abilities, and understanding of real-world AI applications.</p>
+          </article>
           <article class="timeline-item reveal">
             <div class="timeline-dot"></div>
             <p class="timeline-date">Jun – Aug 2025</p>
@@ -325,7 +408,7 @@
         </div>
         <div class="education-grid">
           <article class="education-card reveal">
-            <p>2023 – 2027</p>
+            <p>2024 – 2027</p>
             <h3>B.Tech in Electronics &amp; Telecommunication Engineering</h3>
             <h4>MIT Academy of Engineering, Pune</h4><span>Current CGPA: 7.90</span>
           </article>
@@ -353,15 +436,19 @@
             <h2>Certifications &amp; achievements</h2>
           </div>
           <ul>
-            <li><strong>Advanced Course on Green Skills &amp; Artificial Intelligence</strong><span>Edunet Foundation · AICTE · Shell India</span></li>
+            <li><strong>Advanced Course on Green Skills &amp; Artificial Intelligence</strong><span>Edunet Foundation ·
+                AICTE · Shell India</span></li>
             <li><strong>Fundamentals of Deep Learning</strong><span>NVIDIA</span></li>
             <li><strong>AI Fluency: Framework &amp; Foundations</strong><span>Anthropic Academy</span></li>
             <li><strong>AI Fluency for Students &amp; Nonprofits</strong><span>Anthropic Academy</span></li>
             <li><strong>Claude 101</strong><span>Anthropic Academy</span></li>
             <li><strong>Java Programming Masterclass</strong><span>Alison</span></li>
-            <li><strong>GramNet AI — National Level Project Showcase</strong><span>Selected Presenter · NLPC-26 &amp; IETE Competition</span></li>
-            <li><strong>DIPEX 2026 Idea Presentation</strong><span>Pune Region Presenter · Defense Cyber Security Theme</span></li>
-            <li><strong>Ultrasonic Vision for Blind</strong><span>Project Exhibitor · DIPEX 2024 &amp; MSBTE State-Level Competitions</span></li>
+            <li><strong>GramNet AI — National Level Project Showcase</strong><span>Selected Presenter · NLPC-26 &amp;
+                IETE Competition</span></li>
+            <li><strong>DIPEX 2026 Idea Presentation</strong><span>Pune Region Presenter · Defense Cyber Security
+                Theme</span></li>
+            <li><strong>Ultrasonic Vision for Blind</strong><span>Project Exhibitor · DIPEX 2024 &amp; MSBTE State-Level
+                Competitions</span></li>
           </ul>
         </div>
       </div>
@@ -386,7 +473,8 @@
                   <strong>kompalwargangotri@gmail.com</strong>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359" target="_blank" rel="noopener" class="contact-item">
+              <a href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359" target="_blank" rel="noopener"
+                class="contact-item">
                 <span class="contact-icon">💼</span>
                 <div>
                   <small>LINKEDIN</small>
@@ -413,10 +501,16 @@
           <div class="contact-card contact-action-card">
             <span class="contact-badge"><span class="status-pulse"></span> Open for Roles &amp; Internships</span>
             <h3>Ready to build something intelligent? 🚀</h3>
-            <p>I bring practical AI/ML experience across Generative AI, RAG pipelines, Computer Vision, and applied Machine Learning models.</p>
+            <p>I bring practical AI/ML experience across Generative AI, RAG pipelines, Computer Vision, and applied
+              Machine Learning models.</p>
             <div class="contact-buttons">
               <a class="button primary" href="mailto:kompalwargangotri@gmail.com">Send me an email ✉️</a>
-              <a class="button secondary" href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+              <a class="button secondary" href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359"
+                target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+              <a class="button secondary" href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank"
+                rel="noopener">📄 ATS Resume ↗</a>
+              <a class="button secondary" href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank"
+                rel="noopener">📑 POD Resume ↗</a>
             </div>
           </div>
         </div>
@@ -432,6 +526,8 @@
         <a href="https://www.linkedin.com/in/gangotri-kompalwar-4635b9359" target="_blank"
           rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:kompalwargangotri@gmail.com">Email</a>
+        <a href="assets/documents/Gangotri_Kompalwar_ATS_Resume.pdf" target="_blank" rel="noopener">ATS Resume</a>
+        <a href="assets/documents/Gangotri_Kompalwar_POD_Resume.pdf" target="_blank" rel="noopener">POD Resume</a>
         <a href="#home">Back to top ↑</a>
       </nav>
     </div>
